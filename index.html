@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinity Tours – Discover the Pearl of the Indian Ocean</title>
+  <meta name="description" content="Trinity Tours offers the best travel packages to Sri Lanka. Explore ancient temples, pristine beaches, lush tea plantations, and breathtaking wildlife. Book your perfect Sri Lanka getaway today." />
+  <meta name="keywords" content="Sri Lanka tours, Sri Lanka travel, Sigiriya, Kandy, Ella, Mirissa, Yala, best Sri Lanka packages" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2C7.373 2 2 7.373 2 14s5.373 12 12 12 12-5.373 12-12S20.627 2 14 2z" fill="#4CAF50" opacity="0.2"/>
+            <path d="M14 6l2.5 5.5H22l-4.5 3.5 1.5 5.5L14 17.5 9 20.5l1.5-5.5L6 11.5h5.5L14 6z" fill="#4CAF50"/>
+          </svg>
+        </div>
+        <span class="logo-text">Trinity<span class="logo-accent">Tours</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active" id="nav-home">Home</a>
+        <a href="#packages" class="nav-link" id="nav-packages">Packages</a>
+        <a href="#destinations" class="nav-link" id="nav-destinations">Destinations</a>
+        <a href="#about" class="nav-link" id="nav-about">About</a>
+        <a href="#stories" class="nav-link" id="nav-stories">Stories</a>
+        <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn-primary" id="btn-book-nav">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image: url('images/hero.png')"></div>
+      <div class="hero-slide" style="background-image: url('images/beach.png')"></div>
+      <div class="hero-slide" style="background-image: url('images/sigiriya.png')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-tag" id="hero-tag">✦ Welcome to Sri Lanka</span>
+      <h1 class="hero-title" id="hero-title">
+        Roam the Pearl &amp;<br/>
+        <span class="hero-title-accent">Experience New Wonders</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Ancient temples, misty mountains, golden beaches &amp; wild safaris — all in one island.
+      </p>
+      <div class="hero-buttons">
+        <a href="#packages" class="btn-hero-primary" id="btn-explore-hero">Explore Now</a>
+        <a href="#destinations" class="btn-hero-secondary" id="btn-destinations-hero">
+          <span class="play-icon">▶</span> View Destinations
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-search">
+      <div class="search-box" id="hero-search-box">
+        <div class="search-field">
+          <label>Destination</label>
+          <input type="text" id="search-destination" placeholder="Where to go?" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Check In</label>
+          <input type="date" id="search-checkin" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Guests</label>
+          <select id="search-guests">
+            <option>1 Person</option>
+            <option>2 Persons</option>
+            <option>3–4 Persons</option>
+            <option>5+ Persons</option>
+          </select>
+        </div>
+        <button class="btn-search" id="btn-search">Search</button>
+      </div>
+    </div>
+
+    <div class="hero-slide-indicators">
+      <button class="indicator active" data-slide="0" id="indicator-0"></button>
+      <button class="indicator" data-slide="1" id="indicator-1"></button>
+      <button class="indicator" data-slide="2" id="indicator-2"></button>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" id="stat-clients">
+          <div class="stat-number"><span class="count" data-target="12">0</span>K+</div>
+          <div class="stat-label">Happy Travellers</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-rating">
+          <div class="stat-number"><span class="count" data-target="98">0</span>%</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-destinations">
+          <div class="stat-number"><span class="count" data-target="200">0</span>+</div>
+          <div class="stat-label">Destinations Covered</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-support">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Customer Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT INTRO ===================== -->
+  <section class="about-intro" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">We make travel seamless, joyful &amp; unforgettable</h2>
+          <p class="about-description">
+            Trinity Tours specialises in cultural immersions in Sri Lanka. We help you explore the world with our curated packages and our friendly handlers make affordable lifelong journeys. Start your adventure with confidence and excitement!
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">🏛️</div>
+              <div>
+                <strong>Cultural Heritage</strong>
+                <p>Deep dive into 2500 years of Sri Lankan history</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🌿</div>
+              <div>
+                <strong>Eco-Friendly Travel</strong>
+                <p>Responsible tourism that protects our paradise</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👨‍💼</div>
+              <div>
+                <strong>Expert Local Guides</strong>
+                <p>Knowledgeable guides fluent in 5 languages</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-grid">
+          <div class="about-img-main">
+            <img src="images/sigiriya.png" alt="Sigiriya Rock Fortress" loading="lazy" />
+          </div>
+          <div class="about-img-side">
+            <img src="images/tea.png" alt="Tea Plantations" loading="lazy" />
+            <img src="images/temple.png" alt="Temple of the Tooth" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PACKAGES ===================== -->
+  <section class="packages-section" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Our Packages</span>
+          <h2 class="section-title">Explore the Best Travel Packages for Your Perfect Getaway</h2>
+          <p class="section-desc">Carefully curated itineraries designed for every kind of traveller — whether you seek adventure, relaxation, or culture.</p>
+          <a href="#contact" class="link-more" id="view-all-packages">View all →</a>
+        </div>
+      </div>
+
+      <div class="packages-grid">
+        <div class="package-card featured" id="package-sigiriya">
+          <div class="package-image">
+            <img src="images/sigiriya.png" alt="Sigiriya Heritage Tour" loading="lazy" />
+            <div class="package-badge">Most Popular</div>
+          </div>
+          <div class="package-info">
+            <span class="package-tag">Cultural</span>
+            <h3>Explore the Historic Beauty of Sigiriya</h3>
+            <p>A 5-day journey through ancient kingdoms, cave frescoes, and iconic Lion Rock fortress.</p>
+            <div class="package-meta">
+              <span class="package-duration">⏱ 5 Days / 4 Nights</span>
+              <span class="package-rating">★ 4.9</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">From <strong>$320</strong></div>
+              <a href="#contact" class="btn-package" id="btn-package-sigiriya">Book Holiday</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card" id="package-beach">
+          <div class="package-image">
+            <img src="images/beach.png" alt="Mirissa Beach Escape" loading="lazy" />
+          </div>
+          <div class="package-info">
+            <span class="package-tag">Beach</span>
+            <h3>Mirissa Beach &amp; Whale Watching</h3>
+            <p>4 days of sun, surf, and spotting magnificent blue whales in their ocean habitat.</p>
+            <div class="package-meta">
+              <span class="package-duration">⏱ 4 Days / 3 Nights</span>
+              <span class="package-rating">★ 4.8</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">From <strong>$280</strong></div>
+              <a href="#contact" class="btn-package" id="btn-package-beach">Book Holiday</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card" id="package-wildlife">
+          <div class="package-image">
+            <img src="images/wildlife.png" alt="Yala Safari" loading="lazy" />
+          </div>
+          <div class="package-info">
+            <span class="package-tag">Wildlife</span>
+            <h3>Yala National Park Safari Adventure</h3>
+            <p>Jeep safaris through Yala — home to the world's highest density of leopards.</p>
+            <div class="package-meta">
+              <span class="package-duration">⏱ 3 Days / 2 Nights</span>
+              <span class="package-rating">★ 4.9</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">From <strong>$250</strong></div>
+              <a href="#contact" class="btn-package" id="btn-package-wildlife">Book Holiday</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="package-card" id="package-hill">
+          <div class="package-image">
+            <img src="images/nine_arch.png" alt="Hill Country Tour" loading="lazy" />
+          </div>
+          <div class="package-info">
+            <span class="package-tag">Adventure</span>
+            <h3>Ella &amp; Hill Country Train Journey</h3>
+            <p>The world's most scenic train ride through misty peaks, waterfalls, and tea estates.</p>
+            <div class="package-meta">
+              <span class="package-duration">⏱ 6 Days / 5 Nights</span>
+              <span class="package-rating">★ 5.0</span>
+            </div>
+            <div class="package-footer">
+              <div class="package-price">From <strong>$380</strong></div>
+              <a href="#contact" class="btn-package" id="btn-package-hill">Book Holiday</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED DESTINATIONS ===================== -->
+  <section class="destinations-section" id="destinations">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">Discover</span>
+          <h2 class="section-title">Featured Destinations</h2>
+        </div>
+        <p class="section-desc-side">Unmissable locations that capture the heart and soul of Sri Lanka's incredible diversity.</p>
+      </div>
+
+      <div class="dest-tabs" id="dest-tabs">
+        <button class="dest-tab active" data-filter="all" id="tab-all">All</button>
+        <button class="dest-tab" data-filter="beach" id="tab-beach">Beach</button>
+        <button class="dest-tab" data-filter="heritage" id="tab-heritage">Heritage</button>
+        <button class="dest-tab" data-filter="wildlife" id="tab-wildlife">Wildlife</button>
+        <button class="dest-tab" data-filter="mountain" id="tab-mountain">Mountain</button>
+        <button class="dest-tab" data-filter="city" id="tab-city">City</button>
+      </div>
+
+      <div class="destinations-grid" id="destinations-grid">
+
+        <div class="dest-card" data-category="heritage" id="dest-sigiriya">
+          <img src="images/sigiriya.png" alt="Sigiriya" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.9</div>
+              <h3>Sigiriya Rock Fortress</h3>
+              <span>Cultural Triangle</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-sigiriya">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="beach" id="dest-mirissa">
+          <img src="images/beach.png" alt="Mirissa Beach" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.8</div>
+              <h3>Mirissa Beach</h3>
+              <span>Southern Coast</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-mirissa">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="mountain" id="dest-ella">
+          <img src="images/nine_arch.png" alt="Ella Nine Arch Bridge" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 5.0</div>
+              <h3>Ella &amp; Nine Arch Bridge</h3>
+              <span>Hill Country</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-ella">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="mountain" id="dest-tea">
+          <img src="images/tea.png" alt="Tea Plantations" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.7</div>
+              <h3>Nuwara Eliya Tea Country</h3>
+              <span>Central Province</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-tea">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="heritage" id="dest-kandy">
+          <img src="images/temple.png" alt="Kandy Temple" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.8</div>
+              <h3>Kandy – Temple of the Tooth</h3>
+              <span>Central Province</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-kandy">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="wildlife" id="dest-yala">
+          <img src="images/wildlife.png" alt="Yala National Park" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.9</div>
+              <h3>Yala National Park</h3>
+              <span>Southern Province</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-yala">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="heritage city" id="dest-galle">
+          <img src="images/galle.png" alt="Galle Fort" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.7</div>
+              <h3>Galle Dutch Fort</h3>
+              <span>Southern Coast</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-galle">Explore →</a>
+          </div>
+        </div>
+
+        <div class="dest-card" data-category="mountain" id="dest-waterfall">
+          <img src="images/waterfall.png" alt="Ravana Falls" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-rating">⭐ 4.6</div>
+              <h3>Ravana Falls</h3>
+              <span>Ella, Badulla</span>
+            </div>
+            <a href="#contact" class="dest-btn" id="btn-dest-waterfall">Explore →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">Reviews</span>
+          <h2 class="section-title">What people say about us</h2>
+        </div>
+        <div class="testimonial-arrows">
+          <button class="arrow-btn" id="testi-prev" aria-label="Previous review">‹</button>
+          <button class="arrow-btn" id="testi-next" aria-label="Next review">›</button>
+        </div>
+      </div>
+
+      <div class="testimonials-track-wrap">
+        <div class="testimonials-track" id="testimonials-track">
+
+          <div class="testi-card" id="testi-1">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Trinity Tours made our Sri Lanka honeymoon completely magical. Every detail was thought out perfectly — from Sigiriya to the stunning beach resort. We'll be back!</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #4CAF50, #2E7D32);">AC</div>
+              <div>
+                <strong>Amara Costa</strong>
+                <span>Colombo, Sri Lanka</span>
+              </div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card" id="testi-2">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Absolutely breathtaking experience! The Yala safari exceeded all expectations. Saw three leopards and so many elephants. Our guide was incredibly knowledgeable.</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #FF9800, #E65100);">JM</div>
+              <div>
+                <strong>James Morrison</strong>
+                <span>London, UK</span>
+              </div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card" id="testi-3">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">The hill country train journey was a dream. Trinity Tours handled everything seamlessly. The tea plantation visit and cooking class made it extra special.</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #9C27B0, #4A148C);">SC</div>
+              <div>
+                <strong>Sarah Chen</strong>
+                <span>Sydney, Australia</span>
+              </div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="testi-card" id="testi-4">
+            <div class="testi-quote">"</div>
+            <p class="testi-text">Professional, punctual and passionate about their country. Trinity Tours showed us the real Sri Lanka beyond just the tourist spots. Genuinely life-changing.</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="background: linear-gradient(135deg, #2196F3, #0D47A1);">RP</div>
+              <div>
+                <strong>Ravi Patel</strong>
+                <span>Dubai, UAE</span>
+              </div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LATEST STORIES ===================== -->
+  <section class="stories-section" id="stories">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">Travel Blog</span>
+          <h2 class="section-title">Latest Stories</h2>
+        </div>
+        <a href="#stories" class="link-more" id="view-all-stories">View all stories →</a>
+      </div>
+
+      <div class="stories-grid">
+        <div class="story-card story-featured" id="story-waterfall">
+          <div class="story-image">
+            <img src="images/waterfall.png" alt="Ravana Falls Story" loading="lazy" />
+            <div class="story-category-badge">Nature</div>
+          </div>
+          <div class="story-content">
+            <div class="story-meta">
+              <span class="story-date">June 28, 2026</span>
+              <span class="story-readtime">8 min read</span>
+            </div>
+            <h3>Chasing Waterfalls in Sri Lanka – A Breathtaking Escape</h3>
+            <p>From the thundering Bambarakanda to the mystical Ravana Falls — discover the island's most spectacular cascades hidden within ancient jungle.</p>
+            <a href="#stories" class="story-link" id="btn-story-waterfall">Read More →</a>
+          </div>
+        </div>
+
+        <div class="story-card" id="story-galle">
+          <div class="story-image">
+            <img src="images/galle.png" alt="Galle Fort Story" loading="lazy" />
+            <div class="story-category-badge">History</div>
+          </div>
+          <div class="story-content">
+            <div class="story-meta">
+              <span class="story-date">June 15, 2026</span>
+              <span class="story-readtime">5 min read</span>
+            </div>
+            <h3>Walking Through Galle Fort's Cobbled Colonial Streets</h3>
+            <p>Centuries of Portuguese, Dutch, and British history live within these ancient walls on the southern coast.</p>
+            <a href="#stories" class="story-link" id="btn-story-galle">Read More →</a>
+          </div>
+        </div>
+
+        <div class="story-card" id="story-tea">
+          <div class="story-image">
+            <img src="images/tea.png" alt="Tea Plantation Story" loading="lazy" />
+            <div class="story-category-badge">Culture</div>
+          </div>
+          <div class="story-content">
+            <div class="story-meta">
+              <span class="story-date">June 5, 2026</span>
+              <span class="story-readtime">6 min read</span>
+            </div>
+            <h3>Let's Explore the Tea Trails of Nuwara Eliya</h3>
+            <p>Wander through emerald-green tea estates, learn the art of picking, and sip the freshest Ceylon tea.</p>
+            <a href="#stories" class="story-link" id="btn-story-tea">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-section" id="cta">
+    <div class="cta-bg" style="background-image: url('images/package.png')"></div>
+    <div class="cta-overlay"></div>
+    <div class="container cta-content">
+      <span class="section-tag">Ready to Explore?</span>
+      <h2 class="cta-title">Your Dream Sri Lanka Trip Awaits</h2>
+      <p>Speak with our local experts and let us craft the perfect itinerary just for you.</p>
+      <a href="#contact" class="btn-cta" id="btn-cta-main">Plan My Trip</a>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / NEWSLETTER ===================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Plan Your Perfect Sri Lanka Journey</h2>
+          <p>Our travel experts are ready to help you craft an unforgettable experience. Reach out and let's start planning!</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>42 Galle Road, Colombo 03, Sri Lanka</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+94 11 234 5678</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <p>info@trinitytours.lk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="destination-interest">Interested In</label>
+              <select id="destination-interest" name="interest">
+                <option value="">Select a package or destination</option>
+                <option value="sigiriya">Sigiriya Heritage Tour</option>
+                <option value="beach">Mirissa Beach Escape</option>
+                <option value="wildlife">Yala Safari</option>
+                <option value="hill">Ella Hill Country</option>
+                <option value="custom">Custom Itinerary</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your dream trip…"></textarea>
+            </div>
+            <button type="submit" class="btn-form-submit" id="btn-contact-submit">Send Message</button>
+            <p class="form-success" id="form-success" style="display:none;">✅ Thank you! We'll get back to you within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="newsletter-box">
+        <div class="newsletter-text">
+          <h3>Get Updates &amp; Travel Inspiration</h3>
+          <p>Subscribe for exclusive deals, hidden gems, and Sri Lanka travel tips delivered to your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required />
+          <button type="submit" class="btn-newsletter" id="btn-newsletter-submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                <path d="M14 2C7.373 2 2 7.373 2 14s5.373 12 12 12 12-5.373 12-12S20.627 2 14 2z" fill="#4CAF50" opacity="0.2"/>
+                <path d="M14 6l2.5 5.5H22l-4.5 3.5 1.5 5.5L14 17.5 9 20.5l1.5-5.5L6 11.5h5.5L14 6z" fill="#4CAF50"/>
+              </svg>
+            </div>
+            <span class="logo-text">Trinity<span class="logo-accent">Tours</span></span>
+          </div>
+          <p class="footer-tagline">Discover the Pearl of the Indian Ocean. Your trusted travel partner for authentic Sri Lanka experiences since 2012.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" id="social-facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="social-instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="social-twitter" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" id="social-youtube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about" id="footer-about">About Us</a></li>
+            <li><a href="#" id="footer-careers">Careers</a></li>
+            <li><a href="#" id="footer-partners">Partners</a></li>
+            <li><a href="#" id="footer-blog">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>📍 42 Galle Road, Colombo 03</li>
+            <li>📞 +94 11 234 5678</li>
+            <li>📞 +94 77 890 1234</li>
+            <li>✉️ info@trinitytours.lk</li>
+            <li>✉️ booking@trinitytours.lk</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="#destinations" id="footer-dest-sigiriya">Sigiriya</a></li>
+            <li><a href="#destinations" id="footer-dest-kandy">Kandy</a></li>
+            <li><a href="#destinations" id="footer-dest-ella">Ella</a></li>
+            <li><a href="#destinations" id="footer-dest-galle">Galle</a></li>
+            <li><a href="#destinations" id="footer-dest-mirissa">Mirissa</a></li>
+            <li><a href="#destinations" id="footer-dest-yala">Yala</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact" id="footer-customer-support">Customer Support</a></li>
+            <li><a href="#" id="footer-faq">FAQ</a></li>
+            <li><a href="#" id="footer-privacy">Privacy Policy</a></li>
+            <li><a href="#" id="footer-terms">Terms &amp; Conditions</a></li>
+            <li><a href="#" id="footer-cancellation">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Trinity Tours. All rights reserved. Made with ❤️ in Sri Lanka.</p>
+        <p>Registered with Sri Lanka Tourism Development Authority (SLTDA)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
