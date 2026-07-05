@@ -958,68 +958,212 @@ input, select, textarea { font-family: var(--font-main); }
 /* ============================================
    STORIES
    ============================================ */
-.stories-section { padding: 100px 0; }
-.stories-grid {
+.stories-section { padding: 100px 0; background: #fff; }
+.stories-bento-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  height: 600px;
+}
+.bento-col-right {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
-
-.story-card {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--white);
-  border: 1px solid #F0F4F1;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.story-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-
-.story-image {
+.bento-card {
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
 }
-.story-featured .story-image { height: 260px; }
-.story-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-.story-card:hover .story-image img { transform: scale(1.07); }
-.story-category-badge {
+.bento-large {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 32px;
+  justify-content: space-between;
+}
+.bento-small {
+  flex: 1;
+  padding: 32px;
+}
+.bento-solid-green {
+  background: #50694e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.bento-img {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.bento-overlay {
   position: absolute;
-  top: 14px; left: 14px;
-  background: var(--green-primary);
-  color: var(--white);
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  z-index: 1;
+}
+.bento-large-top, .bento-large-bottom, .bento-small-top, .bento-small-mid, .bento-desc {
+  position: relative;
+  z-index: 2;
 }
 
-.story-content { padding: 24px; }
-.story-meta {
+.bento-pill-group {
   display: flex;
+  flex-direction: column;
   gap: 12px;
-  margin-bottom: 12px;
-  font-size: 0.75rem;
-  color: var(--text-light);
+  align-items: flex-start;
 }
-.story-content h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-main);
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-.story-featured .story-content h3 { font-size: 1.2rem; }
-.story-content p { font-size: 0.85rem; color: var(--text-body); line-height: 1.7; margin-bottom: 16px; }
-.story-link {
+.bento-pill {
+  padding: 6px 16px;
+  border-radius: 30px;
   font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--green-primary);
-  transition: color var(--transition);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
 }
-.story-link:hover { color: var(--green-mid); }
+.bento-pill-outline {
+  border: 1px solid rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.2);
+  color: #222;
+  backdrop-filter: blur(8px);
+}
+.bento-pill-green {
+  background: rgba(80, 105, 78, 0.8);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  margin-top: 12px;
+}
+.bento-pill-white {
+  background: #fff;
+  color: #222;
+  padding: 6px 16px;
+  font-weight: 600;
+}
+
+.bento-number {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.bento-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+}
+.bento-title-small {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+}
+.bento-small-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.bento-small-mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.bento-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+/* Cutout effect for Top Right Card */
+.bento-corner-btn-wrap.tr {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #fff;
+  padding: 16px;
+  border-bottom-left-radius: 20px;
+}
+.bento-corner-btn-wrap.tr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 0% 100%, transparent 20px, #fff 21px);
+}
+.bento-corner-btn-wrap.tr::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 0% 100%, transparent 20px, #fff 21px);
+}
+.bento-circle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #50694e;
+  color: #fff;
+  border-radius: 50%;
+  transition: transform var(--transition);
+}
+.bento-circle-btn:hover {
+  transform: rotate(45deg);
+}
+
+/* Cutout effect for Bottom Right Card */
+.bento-corner-btn-wrap.br {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #fff;
+  padding: 16px 16px 16px 24px;
+  border-top-left-radius: 20px;
+  z-index: 2;
+}
+.bento-corner-btn-wrap.br::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 0% 0%, transparent 20px, #fff 21px);
+}
+.bento-corner-btn-wrap.br::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 0% 0%, transparent 20px, #fff 21px);
+}
+.bento-pill-btn {
+  display: inline-block;
+  background: #50694e;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.bento-pill-btn:hover {
+  opacity: 0.9;
+}
 
 /* ============================================
    CTA BANNER
