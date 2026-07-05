@@ -67,31 +67,33 @@
   let currentSlide = 0;
   let slideTimer;
 
-  function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
-    indicators[currentSlide].classList.remove('active');
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
-  }
+  if (slides.length > 0) {
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      indicators[currentSlide].classList.remove('active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.add('active');
+    }
 
-  function nextSlide() {
-    goToSlide(currentSlide + 1);
-  }
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
 
-  function startSlideshow() {
-    slideTimer = setInterval(nextSlide, 6000);
-  }
+    function startSlideshow() {
+      slideTimer = setInterval(nextSlide, 6000);
+    }
 
-  indicators.forEach(btn => {
-    btn.addEventListener('click', () => {
-      clearInterval(slideTimer);
-      goToSlide(parseInt(btn.dataset.slide));
-      startSlideshow();
+    indicators.forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearInterval(slideTimer);
+        goToSlide(parseInt(btn.dataset.slide));
+        startSlideshow();
+      });
     });
-  });
 
-  startSlideshow();
+    startSlideshow();
+  }
 
   /* ==========================================
      SCROLL-TO-TOP
