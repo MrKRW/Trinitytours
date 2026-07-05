@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations – Trinity Tours | Explore Sri Lanka</title>
+  <meta name="description" content="Explore all destinations across Sri Lanka with Trinity Tours. Browse beaches, mountains, cultural cities, wildlife and adventure spots curated by our experts." />
+  <meta name="keywords" content="Sri Lanka destinations, Sigiriya, Ella, Mirissa beach, Kandy, Yala, Galle Fort, tea plantations, Sri Lanka travel" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/destinations.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
+        <span class="logo-text">Trinity Tours</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="destinations.html" class="nav-link active">Destinations</a>
+        <a href="index.html#packages" class="nav-link">Packages</a>
+        <a href="index.html#about" class="nav-link">About Us</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#signin" class="btn-signin" id="btn-signin-nav">Sign In</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== DESTINATIONS HERO ===================== -->
+  <section class="dest-hero" id="dest-hero">
+    <div class="dest-hero-bg" style="background-image: url('images/sigiriya.png')"></div>
+    <div class="dest-hero-overlay"></div>
+
+    <!-- Floating labels -->
+    <div class="pointer pointer-tl">
+      <div class="pointer-label">100+ Destinations</div>
+      <div class="pointer-line"></div>
+      <div class="pointer-dot"></div>
+    </div>
+    <div class="pointer pointer-tr">
+      <div class="pointer-dot"></div>
+      <div class="pointer-line-left"></div>
+      <div class="pointer-label">Expert Guides</div>
+    </div>
+    <div class="pointer pointer-bl">
+      <div class="pointer-label">5-Star Experiences</div>
+      <div class="pointer-line"></div>
+      <div class="pointer-dot"></div>
+    </div>
+    <div class="pointer pointer-br">
+      <div class="pointer-dot"></div>
+      <div class="pointer-line-left"></div>
+      <div class="pointer-label">Best Price Guarantee</div>
+    </div>
+
+    <div class="hero-content">
+      <span class="dest-hero-tag">EXPLORE SRI LANKA</span>
+      <h1 class="hero-title" id="dest-hero-title">
+        Discover Every<br/>Corner of the<br/>Pearl Island
+      </h1>
+    </div>
+
+    <div class="hero-footer">
+      <div class="hf-left">
+        <a href="#destinations-all" class="btn-book-now">Explore Now</a>
+        <a href="#destinations-all" class="btn-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+      </div>
+      <div class="hf-center">
+        <p>From misty highlands to golden shores, we take you to<br/>the most breathtaking places Sri Lanka has to offer.</p>
+      </div>
+      <div class="hf-right">
+        <a href="#" class="social-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" class="social-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DESTINATION STATS STRIP ===================== -->
+  <section class="dest-stats-strip">
+    <div class="container">
+      <div class="dest-stats-row">
+        <div class="dest-stat-item">
+          <span class="dest-stat-num">100+</span>
+          <span class="dest-stat-label">Unique Destinations</span>
+        </div>
+        <div class="dest-stat-divider"></div>
+        <div class="dest-stat-item">
+          <span class="dest-stat-num">9</span>
+          <span class="dest-stat-label">Provinces Covered</span>
+        </div>
+        <div class="dest-stat-divider"></div>
+        <div class="dest-stat-item">
+          <span class="dest-stat-num">50K+</span>
+          <span class="dest-stat-label">Happy Travellers</span>
+        </div>
+        <div class="dest-stat-divider"></div>
+        <div class="dest-stat-item">
+          <span class="dest-stat-num">5★</span>
+          <span class="dest-stat-label">Average Rating</span>
+        </div>
+        <div class="dest-stat-divider"></div>
+        <div class="dest-stat-item">
+          <span class="dest-stat-num">24/7</span>
+          <span class="dest-stat-label">Local Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEARCH & FILTER ===================== -->
+  <section class="dest-filter-bar-section" id="destinations-all">
+    <div class="container">
+      <div class="dest-filter-header">
+        <div class="dest-filter-title-group">
+          <span class="section-tag-new">BROWSE DESTINATIONS</span>
+          <h2 class="dest-page-title">Find Your Perfect Escape</h2>
+        </div>
+        <div class="dest-search-box" id="dest-search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="dest-search-input" placeholder="Search destinations…" />
+        </div>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="dest-tabs-container">
+        <div class="dest-tabs" id="dest-tabs-page">
+          <button class="dest-tab active" data-filter="all" id="tab-all">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            All
+          </button>
+          <button class="dest-tab" data-filter="beach" id="tab-beach">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            Beach
+          </button>
+          <button class="dest-tab" data-filter="mountain" id="tab-mountain">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3l4 8 5-5 5 15H2L8 3z"/></svg>
+            Mountain
+          </button>
+          <button class="dest-tab" data-filter="city" id="tab-city">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="8" y1="18" x2="8.01" y2="18"/><line x1="16" y1="18" x2="16.01" y2="18"/><line x1="12" y1="14" x2="12.01" y2="14"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/></svg>
+            City
+          </button>
+          <button class="dest-tab" data-filter="adventure" id="tab-adventure">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            Adventure
+          </button>
+          <button class="dest-tab" data-filter="wildlife" id="tab-wildlife">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Wildlife
+          </button>
+          <button class="dest-tab" data-filter="cultural" id="tab-cultural">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Cultural
+          </button>
+        </div>
+      </div>
+
+      <!-- Sort + result count row -->
+      <div class="dest-toolbar" id="dest-toolbar">
+        <p class="dest-result-count" id="dest-count">Showing <strong>12</strong> destinations</p>
+        <div class="dest-sort-wrap">
+          <label for="dest-sort">Sort by:</label>
+          <select id="dest-sort">
+            <option value="popular">Most Popular</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DESTINATIONS GRID ===================== -->
+  <section class="dest-grid-section">
+    <div class="container">
+      <div class="destinations-grid-new dest-page-grid" id="dest-page-grid">
+
+        <!-- Card 1 -->
+        <div class="dest-card-new dest-page-card" data-category="mountain cultural" data-name="sigiriya" data-price="180" data-rating="5.0">
+          <div class="dest-img-wrap">
+            <img src="images/sigiriya.png" alt="Sigiriya" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5.0
+          </div>
+          <div class="dest-category-chip">Mountain · Cultural</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Sigiriya</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Central Province
+              </span>
+              <div class="dest-card-price">$180/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Sigiriya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="dest-card-new dest-page-card" data-category="beach" data-name="mirissa beach" data-price="220" data-rating="5.0">
+          <div class="dest-img-wrap">
+            <img src="images/beach.png" alt="Mirissa Beach" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5.0
+          </div>
+          <div class="dest-category-chip">Beach</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Mirissa Beach</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Southern Province
+              </span>
+              <div class="dest-card-price">$220/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Mirissa Beach">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="dest-card-new dest-page-card" data-category="mountain adventure" data-name="nine arch bridge ella" data-price="150" data-rating="4.9">
+          <div class="dest-img-wrap">
+            <img src="images/nine_arch.png" alt="Nine Arch Bridge, Ella" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.9
+          </div>
+          <div class="dest-category-chip">Mountain · Adventure</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Nine Arch Bridge</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Uva Province
+              </span>
+              <div class="dest-card-price">$150/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Nine Arch Bridge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="dest-card-new dest-page-card" data-category="mountain" data-name="tea plantations nuwara eliya" data-price="250" data-rating="5.0">
+          <div class="dest-img-wrap">
+            <img src="images/tea.png" alt="Tea Plantations" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5.0
+          </div>
+          <div class="dest-category-chip">Mountain</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Tea Plantations</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Nuwara Eliya
+              </span>
+              <div class="dest-card-price">$250/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Tea Plantations">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="dest-card-new dest-page-card" data-category="adventure mountain" data-name="waterfalls sri lanka" data-price="200" data-rating="4.8">
+          <div class="dest-img-wrap">
+            <img src="images/waterfall.png" alt="Waterfalls" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.8
+          </div>
+          <div class="dest-category-chip">Adventure</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Ravana Falls</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Uva Province
+              </span>
+              <div class="dest-card-price">$200/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Ravana Falls">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="dest-card-new dest-page-card" data-category="cultural city" data-name="kandy temple" data-price="170" data-rating="5.0">
+          <div class="dest-img-wrap">
+            <img src="images/temple.png" alt="Kandy Temple" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5.0
+          </div>
+          <div class="dest-category-chip">Cultural · City</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Kandy</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Central Province
+              </span>
+              <div class="dest-card-price">$170/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Kandy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="dest-card-new dest-page-card" data-category="wildlife adventure" data-name="yala national park wildlife" data-price="310" data-rating="4.9">
+          <div class="dest-img-wrap">
+            <img src="images/wildlife.png" alt="Yala National Park" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.9
+          </div>
+          <div class="dest-category-chip">Wildlife · Adventure</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Yala National Park</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Southern Province
+              </span>
+              <div class="dest-card-price">$310/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Yala National Park">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="dest-card-new dest-page-card" data-category="city cultural beach" data-name="galle fort" data-price="190" data-rating="4.9">
+          <div class="dest-img-wrap">
+            <img src="images/galle.png" alt="Galle Fort" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.9
+          </div>
+          <div class="dest-category-chip">City · Cultural</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Galle Fort</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Southern Province
+              </span>
+              <div class="dest-card-price">$190/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Galle Fort">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="dest-card-new dest-page-card" data-category="adventure mountain" data-name="adams peak sri pada" data-price="140" data-rating="4.8">
+          <div class="dest-img-wrap">
+            <img src="images/nine_arch.png" alt="Adam's Peak" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.8
+          </div>
+          <div class="dest-category-chip">Adventure · Cultural</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Adam's Peak</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Sabaragamuwa
+              </span>
+              <div class="dest-card-price">$140/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Adam's Peak">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="dest-card-new dest-page-card" data-category="beach" data-name="unawatuna beach" data-price="210" data-rating="4.7">
+          <div class="dest-img-wrap">
+            <img src="images/beach.png" alt="Unawatuna Beach" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.7
+          </div>
+          <div class="dest-category-chip">Beach</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Unawatuna Beach</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Southern Province
+              </span>
+              <div class="dest-card-price">$210/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Unawatuna Beach">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="dest-card-new dest-page-card" data-category="wildlife mountain" data-name="horton plains" data-price="175" data-rating="4.8">
+          <div class="dest-img-wrap">
+            <img src="images/waterfall.png" alt="Horton Plains" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.8
+          </div>
+          <div class="dest-category-chip">Wildlife · Mountain</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Horton Plains</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Central Province
+              </span>
+              <div class="dest-card-price">$175/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Horton Plains">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="dest-card-new dest-page-card" data-category="cultural city" data-name="polonnaruwa ancient city" data-price="160" data-rating="4.9">
+          <div class="dest-img-wrap">
+            <img src="images/sigiriya.png" alt="Polonnaruwa" loading="lazy" />
+          </div>
+          <div class="dest-rating-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#D3A154"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.9
+          </div>
+          <div class="dest-category-chip">Cultural · Heritage</div>
+          <div class="dest-card-content">
+            <h3 class="dest-card-title">Polonnaruwa</h3>
+            <div class="dest-card-meta">
+              <span class="dest-card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                North Central
+              </span>
+              <div class="dest-card-price">$160/night</div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="dest-card-btn" aria-label="Book Polonnaruwa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="19" x2="19" y2="5"></line><polyline points="10 5 19 5 19 14"></polyline></svg>
+          </a>
+        </div>
+
+      </div><!-- /dest-page-grid -->
+
+      <!-- Empty state -->
+      <div class="dest-empty-state" id="dest-empty-state" style="display:none;">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>No destinations found</h3>
+        <p>Try a different search term or filter category.</p>
+        <button class="btn-reset-filter" id="btn-reset-filter">Clear Filters</button>
+      </div>
+
+      <!-- Load More -->
+      <div class="dest-load-more-wrap" id="dest-load-more-wrap">
+        <button class="btn-load-more" id="btn-load-more">Load More Destinations</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPLORE BY REGION ===================== -->
+  <section class="region-section">
+    <div class="container">
+      <div class="about-new-top" style="margin-bottom:48px">
+        <div class="about-new-label">
+          <span class="section-tag-new">REGIONS</span>
+        </div>
+        <div class="about-new-text">
+          <h2 class="dest-page-title" style="margin-bottom:12px">Explore Sri Lanka by Region</h2>
+          <p class="about-new-desc" style="font-size:1rem; font-style:normal; color:#555;">
+            Each region of Sri Lanka offers a distinct character — from the ancient kingdoms of the Cultural Triangle to the sun-soaked shores of the south coast.
+          </p>
+        </div>
+      </div>
+
+      <div class="region-bento-grid">
+
+        <!-- Region 1: Cultural Triangle (Large) -->
+        <div class="region-card region-large" style="background-image: url('images/sigiriya.png')" id="region-cultural">
+          <div class="bento-overlay"></div>
+          <div class="region-card-inner">
+            <div class="region-pill">Cultural Triangle</div>
+            <div class="region-info">
+              <h3>Ancient Kingdoms &amp; Heritage Sites</h3>
+              <p>Sigiriya, Polonnaruwa, Dambulla — explore Sri Lanka's storied past.</p>
+              <a href="#destinations-all" class="region-link">Explore Region →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Region 2: Hill Country -->
+        <div class="region-card region-small" style="background-image: url('images/tea.png')" id="region-hill">
+          <div class="bento-overlay"></div>
+          <div class="region-card-inner">
+            <div class="region-pill">Hill Country</div>
+            <div class="region-info">
+              <h3>Mist & Mountains</h3>
+              <a href="#destinations-all" class="region-link">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Region 3: South Coast -->
+        <div class="region-card region-small" style="background-image: url('images/beach.png')" id="region-south">
+          <div class="bento-overlay"></div>
+          <div class="region-card-inner">
+            <div class="region-pill">South Coast</div>
+            <div class="region-info">
+              <h3>Golden Shores</h3>
+              <a href="#destinations-all" class="region-link">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Region 4: Wildlife Corridor -->
+        <div class="region-card region-small" style="background-image: url('images/wildlife.png')" id="region-wildlife">
+          <div class="bento-overlay"></div>
+          <div class="region-card-inner">
+            <div class="region-pill">Wildlife Zone</div>
+            <div class="region-info">
+              <h3>Safari &amp; Nature</h3>
+              <a href="#destinations-all" class="region-link">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Region 5: Galle -->
+        <div class="region-card region-small" style="background-image: url('images/galle.png')" id="region-galle">
+          <div class="bento-overlay"></div>
+          <div class="region-card-inner">
+            <div class="region-pill">Galle</div>
+            <div class="region-info">
+              <h3>Colonial Charm</h3>
+              <a href="#destinations-all" class="region-link">Explore →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PACKAGES TEASER ===================== -->
+  <section class="packages-section">
+    <div class="container">
+      <div class="packages-split">
+        <div class="packages-content-left">
+          <span class="section-tag-new">CURATED PACKAGES</span>
+          <h2 class="section-title">Handpicked Sri Lanka Travel Packages</h2>
+          <p class="section-desc">Combine your favourite destinations into one seamless, expertly planned journey. Our packages handle every detail so you can focus on the experience.</p>
+          <a href="index.html#packages" class="link-view-all">View All Packages ↗</a>
+        </div>
+        <div class="packages-content-right">
+          <div class="package-featured-single">
+            <img src="images/sigiriya.png" alt="Featured Sri Lanka Package" />
+            <div class="package-featured-overlay">
+              <h3>The Grand Sri Lanka Circuit</h3>
+              <p>12 nights covering Sigiriya, Kandy, Ella, Yala &amp; Mirissa — the perfect island-wide adventure.</p>
+              <div class="package-featured-footer">
+                <span class="package-price-large">From $1,450 pp</span>
+                <a href="index.html#contact" class="btn-start-booking">Start Booking →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="dest-cta-section">
+    <div class="dest-cta-bg" style="background-image: url('images/waterfall.png')"></div>
+    <div class="dest-cta-overlay"></div>
+    <div class="container">
+      <div class="dest-cta-content">
+        <span class="section-tag-new" style="color:rgba(255,255,255,0.8); letter-spacing:0.15em;">READY TO GO?</span>
+        <h2 class="dest-cta-title">Your Dream Sri Lanka<br/>Journey Starts Here</h2>
+        <p class="dest-cta-desc">Let our expert travel consultants craft a bespoke itinerary perfectly tailored to you.</p>
+        <div class="dest-cta-actions">
+          <a href="index.html#contact" class="btn-book-now">Plan My Trip</a>
+          <a href="tel:+18005551234" class="dest-cta-call">
+            <span class="dest-cta-call-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 12 19.79 19.79 0 0 1 1.04 3.4 2 2 0 0 1 3 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            </span>
+            Call Us Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-new" id="footer">
+    <div class="container">
+      <div class="footer-new-top">
+        <div class="footer-new-brand">
+          <h2>Trinity Tours</h2>
+          <p>Curating exceptional travel experiences worldwide. Discover,<br>explore, and create unforgettable memories</p>
+        </div>
+        <div class="footer-new-subscribe">
+          <h2>Get Updates</h2>
+          <form class="footer-sub-form">
+            <div class="input-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <input type="email" placeholder="Your email address..." />
+              <button type="submit">SUBSCRIBE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-new-links">
+        <div class="footer-col-new">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col-new footer-col-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <span class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+              <span>+1 (800) 555-1234</span>
+            </li>
+            <li>
+              <span class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+              <span>support@trinitytours.com</span>
+            </li>
+            <li>
+              <span class="c-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+              <span>Trinity Tours Headquarters<br>123 Travel Lane, Adventure<br>City, World</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col-new">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="#">Top Destinations</a></li>
+            <li><a href="#">Weekend Getaways</a></li>
+            <li><a href="#">International Trips</a></li>
+            <li><a href="#">Adventure Travel</a></li>
+          </ul>
+        </div>
+        <div class="footer-col-new">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Travel Policies</a></li>
+            <li><a href="#">Refund &amp; Cancellation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-new-bottom">
+        <p>© 2026 Trinity Tours. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Terms of Services</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/destinations.js"></script>
+</body>
+</html>
