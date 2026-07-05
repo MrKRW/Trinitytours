@@ -1327,66 +1327,149 @@ input, select, textarea { font-family: var(--font-main); }
 /* ============================================
    FOOTER
    ============================================ */
-.footer {
-  background: var(--dark-2);
-  padding: 70px 0 0;
+.footer-new {
+  background: #FAF8F5;
+  padding: 80px 0 40px;
+  color: #333;
 }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.footer-new-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
 }
-.footer-brand .footer-logo {
-  display: flex; align-items: center; gap: 10px;
+.footer-new-brand h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a1a1a;
   margin-bottom: 16px;
 }
-.footer-tagline {
-  font-size: 0.85rem;
-  color: var(--white-70);
-  line-height: 1.7;
+.footer-new-brand p {
+  color: #737373;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+.footer-new-subscribe h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a1a1a;
   margin-bottom: 24px;
 }
-.footer-social { display: flex; gap: 10px; }
-.social-btn {
-  width: 38px; height: 38px;
-  border-radius: 8px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  color: var(--white-70);
-  display: flex; align-items: center; justify-content: center;
-  transition: all var(--transition);
+.footer-sub-form .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #a3a3a3;
+  border-radius: 50px;
+  padding: 6px;
+  width: 420px;
 }
-.social-btn:hover { background: var(--green-primary); color: var(--white); border-color: var(--green-primary); transform: translateY(-3px); }
-
-.footer-col h4 {
+.footer-sub-form .input-icon {
+  position: absolute;
+  left: 20px;
+  color: #a3a3a3;
+}
+.footer-sub-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 12px 12px 50px;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+}
+.footer-sub-form input::placeholder {
+  color: #a3a3a3;
+}
+.footer-sub-form button {
+  background: #4a6c52;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 28px;
+  font-weight: 600;
   font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--white);
-  margin-bottom: 20px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
 }
-.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul li {
-  font-size: 0.82rem;
-  color: var(--white-70);
-  line-height: 1.5;
-  transition: color var(--transition);
-}
-.footer-col ul li a { color: inherit; transition: color var(--transition); }
-.footer-col ul li a:hover { color: var(--green-accent); }
 
-.footer-bottom {
-  padding: 24px 0;
+.footer-new-links {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px dashed #d1d5db;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+}
+.footer-col-new {
+  flex: 1;
+  position: relative;
+  padding: 0 20px;
+}
+.footer-col-new:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-right: 2px dashed #d1d5db;
+}
+.footer-col-new:first-child {
+  padding-left: 0;
+}
+.footer-col-new:last-child {
+  padding-right: 0;
+}
+.footer-col-new h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+.footer-col-new ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer-col-new ul li {
+  color: #333;
+  font-size: 0.95rem;
+}
+.footer-col-new ul li a {
+  color: #333;
+  text-decoration: none;
+}
+.footer-col-new ul li a:hover {
+  text-decoration: underline;
+}
+.footer-col-contact ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.footer-col-contact .c-icon {
+  color: #4a6c52;
+  font-size: 1.1rem;
+}
+
+.footer-new-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
-.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+.footer-new-bottom a {
+  color: #333;
+  text-decoration: none;
+}
 
 /* ============================================
    SCROLL TO TOP
