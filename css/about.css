@@ -3,6 +3,13 @@
    Extends style.css — do not modify style.css
    ============================================ */
 
+/* ---- Navbar: always fixed & dark on non-hero pages ---- */
+/* (Hero pages use position:absolute + JS scroll class instead) */
+/* About page has a hero so we only fix the scrolled state colours */
+.navbar.scrolled {
+  background: rgba(13, 27, 18, 0.92) !important;
+}
+
 /* ---- About Hero ---- */
 .about-hero {
   position: relative;
