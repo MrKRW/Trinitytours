@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel – Trinity Tours</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2D6A4F;
+      --green-mid:  #4a6c52;
+      --green-lt:   #D8F3DC;
+      --green-dark: #1B4332;
+      --gold:       #D3A154;
+      --bg:         #0d1117;
+      --surface:    #161b22;
+      --surface2:   #1e242d;
+      --border:     #2a3040;
+      --text:       #e6edf3;
+      --muted:      #8b949e;
+      --danger:     #f85149;
+      --danger-lt:  rgba(248,81,73,0.12);
+      --radius:     14px;
+      --shadow:     0 4px 24px rgba(0,0,0,0.4);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-brand {
+      padding: 28px 24px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-brand h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .sidebar-brand span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .sidebar-nav {
+      padding: 20px 12px;
+      flex: 1;
+    }
+    .nav-section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 12px 10px;
+      display: block;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      margin-bottom: 2px;
+    }
+    .sidebar-link svg { flex-shrink: 0; }
+    .sidebar-link:hover, .sidebar-link.active {
+      background: rgba(45,106,79,0.15);
+      color: var(--text);
+    }
+    .sidebar-link.active { color: #6ee7b7; }
+
+    .sidebar-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .sidebar-footer a {
+      color: #6ee7b7;
+      text-decoration: none;
+    }
+    .sidebar-footer a:hover { text-decoration: underline; }
+
+    /* ===== MAIN CONTENT ===== */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .topbar-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .content-area {
+      padding: 32px;
+      max-width: 1100px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(45,106,79,0.3); }
+    .btn-danger {
+      background: var(--danger-lt);
+      color: var(--danger);
+      border: 1px solid rgba(248,81,73,0.25);
+    }
+    .btn-danger:hover { background: rgba(248,81,73,0.2); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { background: var(--surface2); color: var(--text); }
+    .btn-sm { padding: 7px 14px; font-size: 0.82rem; }
+    .btn-icon { padding: 8px; border-radius: 8px; }
+
+    /* ===== STATS ROW ===== */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .stat-avg { color: var(--gold); }
+
+    /* ===== PANEL CARD ===== */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .panel-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* ===== FORM ===== */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .form-input, .form-textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.92rem;
+      padding: 11px 16px;
+      transition: border-color 0.2s;
+      width: 100%;
+      outline: none;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--green-mid);
+      box-shadow: 0 0 0 3px rgba(74,108,82,0.15);
+    }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); opacity: 0.6; }
+
+    /* Star rating picker */
+    .star-picker {
+      display: flex;
+      gap: 6px;
+    }
+    .star-picker .star {
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: transform 0.15s, color 0.15s;
+      color: var(--border);
+      user-select: none;
+      line-height: 1;
+    }
+    .star-picker .star.active { color: var(--gold); }
+    .star-picker .star:hover { transform: scale(1.2); }
+
+    /* Avatar preview */
+    .avatar-preview-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .avatar-preview {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--surface2);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--muted);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .avatar-preview img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== REVIEW TABLE ===== */
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .review-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .review-row:last-child { border-bottom: none; }
+    .review-row:hover { background: rgba(255,255,255,0.02); }
+
+    .review-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .review-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    .review-info { flex: 1; min-width: 0; }
+    .review-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .review-location {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .review-stars { display: flex; gap: 2px; flex-shrink: 0; }
+    .review-stars .s { font-size: 0.9rem; }
+    .review-stars .s.filled { color: var(--gold); }
+    .review-stars .s.empty { color: var(--border); }
+
+    .review-excerpt {
+      font-size: 0.83rem;
+      color: var(--muted);
+      flex: 2;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .review-actions {
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--muted);
+    }
+    .empty-state svg { opacity: 0.3; margin-bottom: 16px; }
+    .empty-state p { font-size: 0.9rem; }
+
+    /* ===== TOAST ===== */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+    .toast {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      animation: slideIn 0.3s ease;
+      max-width: 320px;
+    }
+    .toast.success { border-color: var(--green-mid); }
+    .toast.success .toast-dot { background: #6ee7b7; }
+    .toast.error { border-color: var(--danger); }
+    .toast.error .toast-dot { background: var(--danger); }
+    .toast-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0);    opacity: 1; }
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: min(560px, 94vw);
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: transform 0.2s;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-overlay.open .modal { transform: scale(1); }
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .modal-title { font-size: 1rem; font-weight: 600; }
+    .modal-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); padding: 4px; border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .modal-close:hover { background: var(--surface2); color: var(--text); }
+    .modal-body { padding: 24px; overflow-y: auto; flex: 1; }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    /* ===== BADGE ===== */
+    .badge {
+      display: inline-flex; align-items: center;
+      padding: 3px 10px; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 600;
+    }
+    .badge-green { background: rgba(110,231,183,0.12); color: #6ee7b7; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      body { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: relative; }
+      .sidebar-nav { display: flex; gap: 4px; padding: 12px; flex-wrap: wrap; }
+      .form-grid { grid-template-columns: 1fr; }
+      .review-excerpt { display: none; }
+      .content-area { padding: 20px; }
+      .topbar { padding: 14px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <h1>Trinity Tours</h1>
+      <span>Admin Panel</span>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-section-label">Content</span>
+      <a href="#reviews-section" class="sidebar-link active" id="nav-reviews">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Reviews
+        <span class="badge badge-green" id="sidebar-count">0</span>
+      </a>
+
+      <span class="nav-section-label" style="margin-top:16px;">Quick Links</span>
+      <a href="about.html" target="_blank" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View About Page
+      </a>
+      <a href="index.html" target="_blank" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Main Website
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      Reviews stored in <strong>localStorage</strong><br/>
+      <a href="about.html" target="_blank">View live testimonials &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+    <div class="topbar">
+      <span class="topbar-title">Reviews &amp; Testimonials</span>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost btn-sm" id="btn-export" title="Export reviews as JSON">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export JSON
+        </button>
+        <button class="btn btn-primary" id="btn-add-review">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Review
+        </button>
+      </div>
+    </div>
+
+    <div class="content-area">
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Total Reviews</div>
+          <div class="stat-value" id="stat-total">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Average Rating</div>
+          <div class="stat-value stat-avg" id="stat-avg-rating">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">5-Star Reviews</div>
+          <div class="stat-value" id="stat-five-star">0</div>
+        </div>
+      </div>
+
+      <!-- Reviews List -->
+      <div class="panel" id="reviews-section">
+        <div class="panel-header">
+          <span class="panel-title">All Reviews</span>
+          <input type="text" class="form-input" id="search-reviews" placeholder="Search reviews..." style="width:220px;padding:8px 14px;font-size:0.84rem;" />
+        </div>
+        <div id="reviews-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== ADD / EDIT MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title">Add Review</span>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="review-form" autocomplete="off">
+          <input type="hidden" id="edit-id" />
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label class="form-label" for="input-name">Name *</label>
+              <input class="form-input" id="input-name" type="text" placeholder="e.g. Sophia Carter" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-location">Location / Role</label>
+              <input class="form-input" id="input-location" type="text" placeholder="e.g. Travel Blogger, UK" />
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label">Avatar Image URL</label>
+              <div class="avatar-preview-wrap">
+                <div class="avatar-preview" id="avatar-preview">
+                  <span id="avatar-initials">?</span>
+                </div>
+                <input class="form-input" id="input-avatar" type="url" placeholder="https://i.pravatar.cc/150?img=1 (optional)" />
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label">Rating *</label>
+              <div class="star-picker" id="star-picker" role="group" aria-label="Star rating">
+                <span class="star" data-val="1" role="button" tabindex="0" aria-label="1 star">&#9733;</span>
+                <span class="star" data-val="2" role="button" tabindex="0" aria-label="2 stars">&#9733;</span>
+                <span class="star" data-val="3" role="button" tabindex="0" aria-label="3 stars">&#9733;</span>
+                <span class="star" data-val="4" role="button" tabindex="0" aria-label="4 stars">&#9733;</span>
+                <span class="star" data-val="5" role="button" tabindex="0" aria-label="5 stars">&#9733;</span>
+              </div>
+              <input type="hidden" id="input-rating" value="5" />
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="input-text">Review Text *</label>
+              <textarea class="form-textarea" id="input-text" placeholder="Write the customer's testimonial here..." required></textarea>
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-cancel">Cancel</button>
+        <button class="btn btn-primary" id="btn-save">Save Review</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DELETE CONFIRM MODAL ===== -->
+  <div class="modal-overlay" id="delete-overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <span class="modal-title">Delete Review</span>
+        <button class="modal-close" id="delete-close" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="color:var(--muted);font-size:0.92rem;line-height:1.7;">
+          Are you sure you want to delete this review? This action <strong style="color:var(--text)">cannot be undone</strong>.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="btn-delete-cancel">Cancel</button>
+        <button class="btn btn-danger" id="btn-delete-confirm">Yes, Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script>
+    const REVIEWS_KEY = 'trinityTours_reviews';
+
+    function getReviews() {
+      try {
+        const s = localStorage.getItem(REVIEWS_KEY);
+        return s ? JSON.parse(s) : [];
+      } catch { return []; }
+    }
+
+    function saveReviews(reviews) {
+      localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
+    }
+
+    function genId() {
+      return 'rev-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6);
+    }
+
+    /* ---- Toast ---- */
+    function showToast(msg, type) {
+      type = type || 'success';
+      const tc = document.getElementById('toast-container');
+      const t = document.createElement('div');
+      t.className = 'toast ' + type;
+      t.innerHTML = '<div class="toast-dot"></div><span>' + msg + '</span>';
+      tc.appendChild(t);
+      setTimeout(function() {
+        t.style.animation = 'none';
+        t.style.opacity = '0';
+        t.style.transition = 'opacity 0.3s';
+        setTimeout(function() { t.remove(); }, 300);
+      }, 3000);
+    }
+
+    /* ---- Stats ---- */
+    function updateStats() {
+      const reviews = getReviews();
+      document.getElementById('stat-total').textContent = reviews.length;
+      document.getElementById('sidebar-count').textContent = reviews.length;
+      if (reviews.length === 0) {
+        document.getElementById('stat-avg-rating').textContent = '-';
+        document.getElementById('stat-five-star').textContent = '0';
+        return;
+      }
+      const avg = (reviews.reduce(function(s, r) { return s + r.rating; }, 0) / reviews.length).toFixed(1);
+      document.getElementById('stat-avg-rating').textContent = avg + ' ★';
+      document.getElementById('stat-five-star').textContent = reviews.filter(function(r) { return r.rating === 5; }).length;
+    }
+
+    /* ---- Render list ---- */
+    function renderList(filter) {
+      filter = filter || '';
+      const container = document.getElementById('reviews-container');
+      let reviews = getReviews();
+      if (filter) {
+        const q = filter.toLowerCase();
+        reviews = reviews.filter(function(r) {
+          return r.name.toLowerCase().indexOf(q) !== -1 ||
+            (r.location || '').toLowerCase().indexOf(q) !== -1 ||
+            r.text.toLowerCase().indexOf(q) !== -1;
+        });
+      }
+
+      if (reviews.length === 0) {
+        container.innerHTML = '<div class="empty-state"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><p>' + (filter ? 'No reviews match your search.' : 'No reviews yet. Click "Add Review" to get started!') + '</p></div>';
+        return;
+      }
+
+      var html = '<div class="reviews-list">';
+      for (var i = 0; i < reviews.length; i++) {
+        html += buildRow(reviews[i]);
+      }
+      html += '</div>';
+      container.innerHTML = html;
+
+      container.querySelectorAll('.btn-edit').forEach(function(btn) {
+        btn.addEventListener('click', function() { openEditModal(btn.dataset.id); });
+      });
+      container.querySelectorAll('.btn-del').forEach(function(btn) {
+        btn.addEventListener('click', function() { confirmDelete(btn.dataset.id); });
+      });
+    }
+
+    function buildRow(r) {
+      var initials = r.name.split(' ').map(function(w) { return w[0]; }).join('').slice(0, 2).toUpperCase();
+      var avatarHTML = r.avatar
+        ? '<img src="' + r.avatar + '" alt="' + r.name + '" onerror="this.style.display=\'none\'" />'
+        : '<span>' + initials + '</span>';
+
+      var stars = '';
+      for (var i = 1; i <= 5; i++) {
+        stars += '<span class="s ' + (i <= r.rating ? 'filled' : 'empty') + '">★</span>';
+      }
+
+      var excerpt = r.text.length > 80 ? r.text.slice(0, 80) + '...' : r.text;
+
+      return '<div class="review-row" data-id="' + r.id + '">' +
+        '<div class="review-avatar">' + avatarHTML + '</div>' +
+        '<div class="review-info"><div class="review-name">' + r.name + '</div><div class="review-location">' + (r.location || '-') + '</div></div>' +
+        '<div class="review-stars">' + stars + '</div>' +
+        '<div class="review-excerpt">' + excerpt + '</div>' +
+        '<div class="review-actions">' +
+          '<button class="btn btn-ghost btn-sm btn-icon btn-edit" data-id="' + r.id + '" title="Edit">' +
+            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>' +
+          '</button>' +
+          '<button class="btn btn-danger btn-sm btn-icon btn-del" data-id="' + r.id + '" title="Delete">' +
+            '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>' +
+          '</button>' +
+        '</div>' +
+      '</div>';
+    }
+
+    /* ---- Star picker ---- */
+    var currentRating = 5;
+
+    function setRating(val) {
+      currentRating = val;
+      document.getElementById('input-rating').value = val;
+      document.querySelectorAll('#star-picker .star').forEach(function(s, i) {
+        s.classList.toggle('active', i < val);
+      });
+    }
+
+    function updateAvatarPreview() {
+      var url = document.getElementById('input-avatar').value.trim();
+      var name = document.getElementById('input-name').value.trim();
+      var initials = name ? name.split(' ').map(function(w) { return w[0]; }).join('').slice(0, 2).toUpperCase() : '?';
+      var preview = document.getElementById('avatar-preview');
+      var inits = document.getElementById('avatar-initials');
+
+      if (url) {
+        var img = preview.querySelector('img');
+        if (!img) { img = document.createElement('img'); preview.appendChild(img); }
+        img.src = url;
+        img.alt = name;
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+        img.onerror = function() { img.remove(); inits.textContent = initials; inits.style.display = ''; };
+        img.onload = function() { inits.style.display = 'none'; };
+      } else {
+        var existImg = preview.querySelector('img');
+        if (existImg) existImg.remove();
+        inits.style.display = '';
+        inits.textContent = initials;
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('review-form').reset();
+      document.getElementById('edit-id').value = '';
+      document.getElementById('modal-title').textContent = 'Add Review';
+      setRating(5);
+      updateAvatarPreview();
+    }
+
+    function openModal() {
+      document.getElementById('modal-overlay').classList.add('open');
+      setTimeout(function() { document.getElementById('input-name').focus(); }, 100);
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+    }
+
+    function openEditModal(id) {
+      var reviews = getReviews();
+      var r = null;
+      for (var i = 0; i < reviews.length; i++) { if (reviews[i].id === id) { r = reviews[i]; break; } }
+      if (!r) return;
+
+      document.getElementById('edit-id').value = r.id;
+      document.getElementById('modal-title').textContent = 'Edit Review';
+      document.getElementById('input-name').value = r.name;
+      document.getElementById('input-location').value = r.location || '';
+      document.getElementById('input-avatar').value = r.avatar || '';
+      document.getElementById('input-text').value = r.text;
+      setRating(r.rating);
+      updateAvatarPreview();
+      openModal();
+    }
+
+    /* ---- Delete flow ---- */
+    var pendingDeleteId = null;
+
+    function confirmDelete(id) {
+      pendingDeleteId = id;
+      document.getElementById('delete-overlay').classList.add('open');
+    }
+
+    function closeDeleteModal() {
+      pendingDeleteId = null;
+      document.getElementById('delete-overlay').classList.remove('open');
+    }
+
+    /* ---- Save review ---- */
+    function saveReview() {
+      var name = document.getElementById('input-name').value.trim();
+      var text = document.getElementById('input-text').value.trim();
+      if (!name || !text) { showToast('Name and review text are required.', 'error'); return; }
+
+      var reviews = getReviews();
+      var id = document.getElementById('edit-id').value;
+
+      var reviewData = {
+        id: id || genId(),
+        name: name,
+        location: document.getElementById('input-location').value.trim(),
+        avatar: document.getElementById('input-avatar').value.trim(),
+        rating: parseInt(document.getElementById('input-rating').value, 10) || 5,
+        text: text
+      };
+
+      if (id) {
+        for (var i = 0; i < reviews.length; i++) {
+          if (reviews[i].id === id) { reviews[i] = reviewData; break; }
+        }
+        showToast('Review updated successfully!');
+      } else {
+        reviews.unshift(reviewData);
+        showToast('Review added successfully!');
+      }
+
+      saveReviews(reviews);
+      closeModal();
+      renderList(document.getElementById('search-reviews').value);
+      updateStats();
+    }
+
+    /* ---- Export ---- */
+    function exportReviews() {
+      var data = JSON.stringify(getReviews(), null, 2);
+      var blob = new Blob([data], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'trinity-tours-reviews.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      showToast('Reviews exported!');
+    }
+
+    /* ---- Bindings ---- */
+    document.getElementById('btn-add-review').addEventListener('click', function() { resetForm(); openModal(); });
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.getElementById('btn-cancel').addEventListener('click', closeModal);
+    document.getElementById('btn-save').addEventListener('click', saveReview);
+    document.getElementById('btn-export').addEventListener('click', exportReviews);
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === e.currentTarget) closeModal();
+    });
+
+    document.getElementById('delete-close').addEventListener('click', closeDeleteModal);
+    document.getElementById('btn-delete-cancel').addEventListener('click', closeDeleteModal);
+    document.getElementById('delete-overlay').addEventListener('click', function(e) {
+      if (e.target === e.currentTarget) closeDeleteModal();
+    });
+    document.getElementById('btn-delete-confirm').addEventListener('click', function() {
+      if (!pendingDeleteId) return;
+      var reviews = getReviews().filter(function(r) { return r.id !== pendingDeleteId; });
+      saveReviews(reviews);
+      closeDeleteModal();
+      renderList(document.getElementById('search-reviews').value);
+      updateStats();
+      showToast('Review deleted.');
+    });
+
+    document.querySelectorAll('#star-picker .star').forEach(function(s) {
+      s.addEventListener('click', function() { setRating(parseInt(s.dataset.val)); });
+      s.addEventListener('mouseenter', function() {
+        var val = parseInt(s.dataset.val);
+        document.querySelectorAll('#star-picker .star').forEach(function(x, i) { x.classList.toggle('active', i < val); });
+      });
+      s.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setRating(parseInt(s.dataset.val)); } });
+    });
+    document.getElementById('star-picker').addEventListener('mouseleave', function() { setRating(currentRating); });
+
+    document.getElementById('input-avatar').addEventListener('input', updateAvatarPreview);
+    document.getElementById('input-name').addEventListener('input', function() {
+      if (!document.getElementById('input-avatar').value) updateAvatarPreview();
+    });
+
+    document.getElementById('search-reviews').addEventListener('input', function(e) { renderList(e.target.value); });
+
+    document.getElementById('review-form').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); saveReview(); }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeModal(); closeDeleteModal(); }
+    });
+
+    /* ---- Init ---- */
+    setRating(5);
+    renderList();
+    updateStats();
+  </script>
+
+</body>
+</html>
