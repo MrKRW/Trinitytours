@@ -180,15 +180,21 @@ input, select, textarea { font-family: var(--font-main); }
    NAVBAR
    ============================================ */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 24px 0;
+  padding: 20px 0;
+  background: transparent;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
 }
+
+/* Scrolled state — full-width blurred bar */
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 16px 0;
+  padding: 12px 0;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 4px 24px rgba(0,0,0,0.18);
 }
 .nav-container {
   max-width: 1440px;

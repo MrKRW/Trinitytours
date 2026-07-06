@@ -3,13 +3,19 @@
    Extends style.css — do not modify style.css
    ============================================ */
 
-/* ---- Navbar: always fixed & dark on non-hero pages ---- */
-.navbar {
-  position: fixed !important;
-  background: rgba(13, 27, 18, 0.92) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  padding: 16px 0 !important;
+/* ---- Navbar: dark text on light page background ---- */
+.navbar:not(.scrolled) .logo-text,
+.navbar:not(.scrolled) .nav-link,
+.navbar:not(.scrolled) .btn-signin {
+  color: #1a1a1a;
+}
+.navbar:not(.scrolled) .btn-signin {
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.15);
+  color: #1a1a1a;
+}
+.navbar:not(.scrolled) .hamburger span {
+  background: #1a1a1a;
 }
 
 /* ---- Page Header (no hero) ---- */

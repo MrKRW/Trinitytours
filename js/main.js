@@ -12,8 +12,8 @@
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
+  function handleNavbarScroll() {
+    if (window.scrollY > 80) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
@@ -36,12 +36,18 @@
 
     // Scroll-to-top button
     const scrollBtn = document.getElementById('scroll-top');
-    if (window.scrollY > 400) {
-      scrollBtn.classList.add('visible');
-    } else {
-      scrollBtn.classList.remove('visible');
+    if (scrollBtn) {
+      if (window.scrollY > 400) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
     }
-  });
+  }
+
+  // Check on load (in case page is loaded scrolled down)
+  handleNavbarScroll();
+  window.addEventListener('scroll', handleNavbarScroll);
 
   // Mobile menu toggle
   hamburger.addEventListener('click', () => {
