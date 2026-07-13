@@ -150,7 +150,7 @@
     { selector: '.about-text', cls: 'reveal-left' },
     { selector: '.about-image-grid', cls: 'reveal-right' },
     { selector: '.package-card', cls: 'reveal' },
-    { selector: '.dest-card', cls: 'reveal' },
+    { selector: '.dest-card-new', cls: 'reveal' },
     { selector: '.testi-card', cls: 'reveal' },
     { selector: '.story-card', cls: 'reveal' },
     { selector: '.contact-info', cls: 'reveal-left' },
@@ -189,7 +189,7 @@
      DESTINATIONS FILTER TABS
   ========================================== */
   const destTabs = document.querySelectorAll('.dest-tab');
-  const destCards = document.querySelectorAll('.dest-card');
+  const destCards = document.querySelectorAll('.dest-card-new');
 
   destTabs.forEach(tab => {
     tab.addEventListener('click', () => {
