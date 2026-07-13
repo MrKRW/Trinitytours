@@ -92,7 +92,7 @@
     .tour-description {
       font-size: 1.1rem;
       line-height: 1.8;
-      color: #a0a5ad;
+      color: #4A5568;
       margin-bottom: 40px;
     }
 
@@ -106,15 +106,16 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      background: rgba(255, 255, 255, 0.03);
+      background: #f8f9fa;
       padding: 20px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid #e9ecef;
       transition: transform 0.3s ease, border-color 0.3s ease;
+      color: #1A1A2E;
     }
     .highlight-item:hover {
       transform: translateY(-5px);
-      border-color: rgba(211, 161, 84, 0.3);
+      border-color: rgba(211, 161, 84, 0.5);
     }
     .highlight-icon {
       color: #D3A154;
@@ -127,8 +128,8 @@
       gap: 15px;
     }
     .itinerary-item {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: #ffffff;
+      border: 1px solid #e9ecef;
       border-radius: 12px;
       overflow: hidden;
       transition: all 0.3s ease;
@@ -142,7 +143,7 @@
       user-select: none;
     }
     .itinerary-header:hover {
-      background: rgba(255, 255, 255, 0.04);
+      background: #f8f9fa;
     }
     .itinerary-day {
       background: #D3A154;
@@ -156,11 +157,11 @@
       font-weight: 600;
       font-size: 1.1rem;
       flex: 1;
-      color: #fff;
+      color: #1A1A2E;
     }
     .itinerary-body {
       padding: 0 20px 20px 70px;
-      color: #a0a5ad;
+      color: #4A5568;
       line-height: 1.6;
       display: none;
     }
@@ -169,7 +170,7 @@
     }
     .itinerary-item.active {
       border-color: rgba(211, 161, 84, 0.5);
-      background: rgba(211, 161, 84, 0.05);
+      background: #fffdfa;
     }
 
     /* Right Sidebar */
@@ -178,12 +179,12 @@
       top: 100px;
     }
     .booking-card {
-      background: rgba(255, 255, 255, 0.03);
+      background: #ffffff;
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid #e9ecef;
       border-radius: 24px;
       padding: 40px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     }
     .booking-price {
       font-size: 2.5rem;
@@ -194,14 +195,14 @@
     }
     .booking-price span {
       font-size: 1rem;
-      color: #a0a5ad;
+      color: #4A5568;
       font-family: 'Outfit', sans-serif;
       font-weight: 400;
     }
     .booking-card hr {
       border: none;
       height: 1px;
-      background: rgba(255,255,255,0.1);
+      background: #e9ecef;
       margin: 25px 0;
     }
     .booking-form .input-group {
@@ -209,16 +210,20 @@
     }
     .booking-form input, .booking-form select, .booking-form textarea {
       width: 100%;
-      background: rgba(0,0,0,0.2);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: #f8f9fa;
+      border: 1px solid #ced4da;
       padding: 15px;
       border-radius: 8px;
-      color: #fff;
+      color: #1A1A2E;
       font-family: inherit;
+    }
+    .booking-form input::placeholder, .booking-form textarea::placeholder {
+      color: #6c757d;
     }
     .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
       outline: none;
       border-color: #D3A154;
+      background: #ffffff;
     }
     .booking-form .btn-submit {
       width: 100%;
@@ -233,7 +238,8 @@
       transition: all 0.3s ease;
     }
     .booking-form .btn-submit:hover {
-      background: #fff;
+      background: #1A1A2E;
+      color: #ffffff;
       transform: translateY(-2px);
     }
   </style>
@@ -297,7 +303,7 @@
           <div class="booking-price" id="tour-price">
             $-- <span>/ person</span>
           </div>
-          <p style="color: #a0a5ad; font-size: 0.95rem;">Book now to secure your adventure. No payment required today.</p>
+          <p style="color: #4A5568; font-size: 0.95rem;">Book now to secure your adventure. No payment required today.</p>
           <hr />
           <form class="booking-form" onsubmit="event.preventDefault(); alert('Booking Inquiry Submitted Successfully!');">
             <div class="input-group">
