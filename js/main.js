@@ -310,8 +310,13 @@
         document.getElementById('search-destination').style.borderBottom = '2px solid #E9A227';
         return;
       }
-      // Scroll to packages section as a simple search action
-      document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
+      // Scroll to destinations section as a simple search action
+      const targetSection = document.getElementById('destinations');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = 'destinations.html';
+      }
     });
   }
 
