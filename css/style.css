@@ -1588,10 +1588,13 @@ input, select, textarea { font-family: var(--font-main); }
     bottom: 20px;
   }
   .pointer { display: none; }
+  .about-new-section { padding: 60px 0; }
   .about-new-top {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    margin-bottom: 40px;
   }
+  .about-new-label { flex: none; height: auto; }
   .packages-split {
     flex-direction: column;
   }
@@ -1624,8 +1627,12 @@ input, select, textarea { font-family: var(--font-main); }
 
   .destinations-grid-new { grid-template-columns: 1fr; }
 
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-brand { grid-column: span 2; }
+  .footer-new-top { flex-direction: column; gap: 32px; }
+  .footer-new-links { flex-direction: column; gap: 40px; border-bottom: 1px solid #eaeaea; padding-bottom: 30px; }
+  .footer-col-new:not(:last-child)::after { display: none; }
+  .footer-col-new { padding: 0; }
+  .footer-new-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-sub-form .input-wrapper { max-width: 100%; }
 
   .newsletter-box { flex-direction: column; align-items: flex-start; }
   .newsletter-form { flex-direction: column; width: 100%; }
@@ -1641,6 +1648,4 @@ input, select, textarea { font-family: var(--font-main); }
   .destinations-grid { grid-template-columns: 1fr; }
   .destinations-grid-new { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.2rem; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-brand { grid-column: span 1; }
 }
