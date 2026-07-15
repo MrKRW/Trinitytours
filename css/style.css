@@ -1560,15 +1560,26 @@ input, select, textarea { font-family: var(--font-main); }
   .packages-grid { grid-template-columns: 1fr; }
   .package-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
   .package-card.featured .package-image { min-height: 240px; }
-  .stories-grid { grid-template-columns: 1fr; }
+  .stories-bento-grid { grid-template-columns: 1fr; height: auto; gap: 24px; }
+  .bento-large { min-height: 400px; margin-bottom: 0; }
+  .bento-small { min-height: 280px; height: auto; flex: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .testimonials-track .testi-card { min-width: calc(50% - 12px); }
   .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+  .destinations-grid-new { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .dest-tabs-container { overflow-x: auto; padding-bottom: 10px; }
-  .dest-tabs { width: max-content; }
+  .dest-tabs-container { 
+    overflow-x: auto; 
+    padding-bottom: 10px; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .dest-tabs-container::-webkit-scrollbar {
+    display: none;
+  }
+  .dest-tabs { width: max-content; gap: 24px; padding: 0 4px; }
   .hero-footer {
     flex-direction: column;
     gap: 20px;
@@ -1611,6 +1622,8 @@ input, select, textarea { font-family: var(--font-main); }
   .section-header-row { flex-direction: column; align-items: flex-start; }
   .section-desc-side { text-align: left; max-width: 100%; }
 
+  .destinations-grid-new { grid-template-columns: 1fr; }
+
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: span 2; }
 
@@ -1626,6 +1639,7 @@ input, select, textarea { font-family: var(--font-main); }
 
 @media (max-width: 520px) {
   .destinations-grid { grid-template-columns: 1fr; }
+  .destinations-grid-new { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.2rem; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand { grid-column: span 1; }
