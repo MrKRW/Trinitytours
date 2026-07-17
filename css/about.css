@@ -757,5 +757,5 @@
 @media (max-width: 520px) {
   .team-grid { grid-template-columns: 1fr; }
   .about-mission-images { height: 320px; }
-  .mission-badge { display: none; }
+  .mission-badge { transform: scale(0.6); transform-origin: top right; right: 0; }
 }

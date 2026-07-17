@@ -620,7 +620,7 @@
 @media (max-width: 520px) {
   .dest-page-grid { grid-template-columns: 1fr; }
   .dest-page-card { height: 280px; }
-  .dest-stats-strip { display: none; }
+  .dest-stats-strip { display: block; }
   .dest-cta-title { font-size: 2rem; }
 }
 
