@@ -607,21 +607,25 @@
 }
 
 @media (max-width: 768px) {
-  .dest-filter-header { flex-direction: column; align-items: flex-start; }
+  .dest-filter-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .dest-search-box { width: 100%; min-width: unset; }
   .dest-page-grid { grid-template-columns: 1fr 1fr; }
   .dest-page-card { height: 260px; }
   .region-bento-grid { grid-template-columns: 1fr; grid-template-rows: unset; }
   .region-large { grid-column: span 1; height: 300px; }
   .region-small { height: 220px; }
-  .dest-toolbar { flex-direction: column; align-items: flex-start; }
+  .dest-toolbar { flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; }
+  .dest-sort { width: 100%; }
+  .dest-sort select { width: 100%; }
 }
 
 @media (max-width: 520px) {
   .dest-page-grid { grid-template-columns: 1fr; }
   .dest-page-card { height: 280px; }
   .dest-stats-strip { display: block; }
+  .dest-stat-item { min-width: 100%; padding: 16px 0; }
   .dest-cta-title { font-size: 2rem; }
+  .dest-hero-title { font-size: clamp(2rem, 5vw, 2.8rem); }
 }
 
 /* ---- Reversed Packages Split ---- */

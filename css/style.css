@@ -1552,6 +1552,8 @@ input, select, textarea { font-family: var(--font-main); }
   .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; }
   .footer-col:nth-child(4),
   .footer-col:nth-child(5) { grid-column: auto; }
+  .about-new-stats { justify-content: center; }
+  .about-stat-pill { min-width: 45%; flex: 1 1 45%; }
 }
 
 @media (max-width: 900px) {
@@ -1567,6 +1569,7 @@ input, select, textarea { font-family: var(--font-main); }
   .testimonials-track .testi-card { min-width: calc(50% - 12px); }
   .destinations-grid { grid-template-columns: repeat(2, 1fr); }
   .destinations-grid-new { grid-template-columns: repeat(2, 1fr); }
+  .hero-title { font-size: clamp(2.5rem, 4vw, 3rem); }
 }
 
 @media (max-width: 768px) {
@@ -1586,8 +1589,9 @@ input, select, textarea { font-family: var(--font-main); }
     left: 20px;
     right: 20px;
     bottom: 20px;
+    padding: 20px;
   }
-  .pointer { transform: scale(0.6); }
+  .pointer { display: none; }
   .about-new-section { padding: 60px 0; }
   .about-new-top {
     flex-direction: column;
@@ -1595,6 +1599,8 @@ input, select, textarea { font-family: var(--font-main); }
     margin-bottom: 40px;
   }
   .about-new-label { flex: none; height: auto; }
+  .about-new-desc { font-size: 1.3rem; }
+  .about-stat-pill { min-width: 100%; flex: 1 1 100%; }
   .packages-split {
     flex-direction: column;
   }
@@ -1642,17 +1648,21 @@ input, select, textarea { font-family: var(--font-main); }
   .testimonials-track .testi-card { min-width: calc(100% - 0px); }
 
   .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 520px) {
   .destinations-grid { grid-template-columns: 1fr; }
   .destinations-grid-new { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.2rem; }
-  .about-new-desc { font-size: 1.2rem; }
+  .about-new-desc { font-size: 1.1rem; }
   .about-stat-pill { min-width: 100%; }
   .section-title { font-size: 1.8rem; }
   .btn-hero-primary { padding: 12px 24px; font-size: 0.9rem; }
   .btn-hero-secondary { padding: 12px 24px; font-size: 0.9rem; }
   .hf-center p { font-size: 0.9rem; }
   .hf-center p br { display: none; }
+  .hf-left { flex-direction: column; width: 100%; }
+  .btn-book-now { width: 100%; text-align: center; justify-content: center; }
+  .btn-arrow { display: none; }
 }

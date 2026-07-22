@@ -740,13 +740,15 @@
   }
   .timeline-dot { left: 20px; }
   .timeline-card { max-width: 100%; }
+  .about-stats-row { justify-content: center; }
+  .about-stat-item { min-width: 45%; }
 }
 
 @media (max-width: 768px) {
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .team-card-img { height: 280px; }
   .why-features-grid { grid-template-columns: 1fr; }
-  .about-team-header { flex-direction: column; align-items: flex-start; }
+  .about-team-header { flex-direction: column; align-items: flex-start; gap: 16px; }
   .about-team-desc { text-align: left; max-width: 100%; }
   .about-stats-row { justify-content: center; }
   .about-stat-divider { display: none; }
@@ -758,4 +760,6 @@
   .team-grid { grid-template-columns: 1fr; }
   .about-mission-images { height: 320px; }
   .mission-badge { transform: scale(0.6); transform-origin: top right; right: 0; }
+  .about-stat-item { min-width: 100%; padding: 16px 0; }
+  .hero-new-text { gap: 16px; margin-bottom: 24px; }
 }
