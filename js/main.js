@@ -57,13 +57,22 @@
   });
 
   // Close mobile menu on link click
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
+  navLinks.querySelectorAll('.nav-link, .btn-get-started').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
       navLinks.classList.remove('open');
       document.body.style.overflow = '';
     });
   });
+
+  const navClose = document.getElementById('nav-close');
+  if (navClose) {
+    navClose.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
 
   /* ==========================================
      HERO SLIDESHOW

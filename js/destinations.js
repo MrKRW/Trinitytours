@@ -36,13 +36,22 @@
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
 
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
+  navLinks.querySelectorAll('.nav-link, .btn-get-started').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
       navLinks.classList.remove('open');
       document.body.style.overflow = '';
     });
   });
+
+  const navClose = document.getElementById('nav-close');
+  if (navClose) {
+    navClose.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
 
   /* ==========================================
      SCROLL TO TOP
