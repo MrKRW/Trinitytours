@@ -81,6 +81,43 @@
         grid-template-columns: 1fr;
       }
     }
+    @media (max-width: 768px) {
+      .tour-hero-title {
+        font-size: 2rem;
+      }
+      .tour-hero-meta {
+        font-size: 0.9rem;
+      }
+      .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+      .booking-card {
+        padding: 20px;
+      }
+      .booking-price {
+        font-size: 2rem;
+      }
+      .tour-main h2 {
+        font-size: 1.8rem;
+      }
+      .itinerary-header {
+        padding: 15px;
+        gap: 15px;
+      }
+      .itinerary-body {
+        padding: 0 15px 15px 15px;
+      }
+    }
+    @media (max-width: 480px) {
+      .tour-hero-title {
+        font-size: 1.7rem;
+      }
+      .itinerary-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
 
     /* Left Content */
     .tour-main h2 {
@@ -250,16 +287,25 @@
   <!-- NAVBAR -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
+      <a href="index.html" class="nav-logo" id="nav-logo-link">
         <img src="logo/logo_small.png" alt="Trinity Tours Logo" class="site-logo" />
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" id="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="destinations.html" class="nav-link">Destinations</a>
-
         <a href="about.html" class="nav-link">About Us</a>
         <a href="contact.html" class="nav-link">Contact</a>
+        <div class="nav-socials nav-mobile-only">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
       </nav>
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 

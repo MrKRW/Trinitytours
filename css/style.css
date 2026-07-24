@@ -1711,7 +1711,7 @@ input, select, textarea { font-family: var(--font-main); }
 
   .destinations-grid-new { grid-template-columns: 1fr; }
 
-  .footer-new-top { flex-direction: column; gap: 32px; }
+  .footer-new-top { flex-direction: column; gap: 32px; align-items: stretch; }
   .footer-new-links { flex-direction: column; gap: 40px; border-bottom: 1px solid #eaeaea; padding-bottom: 30px; }
   .footer-col-new:not(:last-child)::after { display: none; }
   .footer-col-new { padding: 0; }
