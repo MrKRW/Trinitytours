@@ -20,14 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
       });
     });
-    const navClose = document.getElementById('nav-close');
-    if (navClose) {
-      navClose.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    }
+
   }
 
   /* ---- Topic pills ---- */

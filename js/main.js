@@ -65,14 +65,7 @@
     });
   });
 
-  const navClose = document.getElementById('nav-close');
-  if (navClose) {
-    navClose.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  }
+
 
   /* ==========================================
      HERO SLIDESHOW
